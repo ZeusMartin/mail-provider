@@ -10,10 +10,11 @@ import (
 	"log"
 )
 
-func configProcRoutes(debug bool) {
+func configProcRoutes() {
 
 	http.HandleFunc("/sender/mail", func(w http.ResponseWriter, r *http.Request) {
 		cfg := config.Config()
+		debug:=cfg.Debug
 		token := param.String(r, "token", "")
 		if cfg.Http.Token != token {
 			if debug{

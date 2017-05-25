@@ -9,9 +9,8 @@ import (
 )
 
 func init() {
-	debug := config.Config().Debug
 	configCommonRoutes( )
-	configProcRoutes(debug)
+	configProcRoutes()
 }
 
 func Start() {
