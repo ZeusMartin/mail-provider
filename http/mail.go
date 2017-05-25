@@ -5,7 +5,7 @@ import (
 	"strings"
 	"github.com/open-falcon/mail-provider/config"
 	"github.com/toolkits/web/param"
-	"gomail"
+	"github.com/go-gomail/gomail"
 	"strconv"
 	"log"
 )
