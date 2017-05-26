@@ -1,6 +1,7 @@
 package http
 
 import (
+	"net"
 	"net/http"
 	"strings"
 	"github.com/open-falcon/mail-provider/config"
@@ -28,16 +29,9 @@ func configProcRoutes() {
 		subject := param.MustString(r, "subject")
 		content := param.MustString(r, "content")
 
-		Addr:=strings.Split(cfg.Smtp.Addr,":")
-		port,error:=strconv.Atoi(Addr[1])
-		if error != nil{
-			if debug {
-				http.Error(w, "The address is error to converted Int ", http.StatusForbidden)
-			}
-			log.Println("The address is error to converted Int ")
-			return
-		}
-		d := gomail.NewDialer(Addr[0], port, cfg.Smtp.Username, cfg.Smtp.Password)
+		host, strPort, _ := net.SplitHostPort(cfg.Smtp.Addr)
+		port,_:=strconv.Atoi(strPort)
+		d := gomail.NewDialer(host, port, cfg.Smtp.Username, cfg.Smtp.Password)
 		s, err := d.Dial()
 		if err != nil {
 			if debug{
