@@ -11,7 +11,7 @@ mail-provider
 
 mkdir -p $GOPATH/src/github.com/open-falcon
 cd $GOPATH/src/github.com/open-falcon
-git clone https://github.com/ZeusMartin/mail-provider.git
+git clone git url
 cd $GOPATH/src/github.com/open-falcon/mail-provider
 go get ./...
 ./control build
@@ -23,9 +23,9 @@ go get ./...
 
 ```
 export WorkDir="$HOME/open-falcon"
-mkdir -p $WorkDir
-tar -xzvf falcon-mail-provider-0.0.1.tar.gz -C $WorkDir
-cd $WorkDir
+mkdir -p $WorkDir/mail-provider
+tar -xzvf mail-provider-0.0.1.tar.gz -C $WorkDir/mail-provider/
+cd $WorkDir/mail-provider
 
 # 启动
 # 修改cfg.json配置文件中的smtp信息
@@ -38,7 +38,10 @@ cd $WorkDir
 
 ## 使用方法
 
+
 ```
+## 配置alarm的cfg.json文件中的 mail 地址
+##测试方式
 curl http://$ip:4000/sender/mail -d "tos=a@a.com,b@b.com&subject=xx&content=yy"
 
 ```

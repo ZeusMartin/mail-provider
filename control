@@ -5,8 +5,7 @@ cd $WORKSPACE
 
 mkdir -p var
 
-module=mail-provider
-app=falcon-$module
+app=mail-provider
 conf=cfg.json
 localconf=cfg.local.json
 pidfile=var/app.pid
@@ -72,7 +71,6 @@ function build() {
     if [ $? -ne 0 ]; then
         exit $?
     fi
-    mv $module $app
     ./$app -v
 }
 
