@@ -1,7 +1,7 @@
 mail-provider
 =============
 
-把Gomail封装为一个简单http接口，可以为falcon-plus中的alarm用来发送报警邮件
+为Exchange no ssl 25端口提供发送报警邮件功能模块，封装为一个简单http接口。可以和falcon-plus中的alarm配合使用
 
 ## 编译步骤
 

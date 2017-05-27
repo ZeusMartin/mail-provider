@@ -5,9 +5,7 @@
         "token": ""
     },
     "smtp": {
-        "addr": "smtp.qq.com:465",
-        "username": "xxxxxxxxx@qq.com",
-        "password": "xxxxxxxxxxxxxxxx",
-        "from": "xxxxxxxxxxx@qq.com"
+        "addr": "mail.cf.local:25",
+        "from": "xxxxxxx@cf.local"
     }
 }

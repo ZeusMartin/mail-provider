@@ -16,8 +16,6 @@ type HttpConfig struct {
 
 type SmtpConfig struct {
 	Addr     string `json:"addr"`
-	Username string `json:"username"`
-	Password string `json:"password"`
 	From     string `json:"from"`
 }
 
@@ -26,6 +24,9 @@ type GlobalConfig struct {
 	Http  *HttpConfig `json:"http"`
 	Smtp  *SmtpConfig `json:"smtp"`
 }
+
+
+
 
 var (
 	ConfigFile string
